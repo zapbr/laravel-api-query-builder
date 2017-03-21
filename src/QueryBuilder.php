@@ -119,6 +119,14 @@ class QueryBuilder
         return $this->query->lists($value, $key);
     }
 
+    /*
+    RETURN THE BASE MODEL WITH THE QUERY APPLIED TO CONTINUE MANIPULATION.
+    */
+    public function model()
+    {
+        return $this->query;
+    }
+    
     protected function prepare()
     {
         $this->setWheres($this->uriParser->whereParameters());
